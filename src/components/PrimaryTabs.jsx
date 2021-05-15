@@ -1,4 +1,4 @@
-const PrimaryTabs = ({tabs, selected, setSelected}) => {
+const PrimaryTabs = ({tabs, selected, setSelected, children}) => {
 
     return (
         <div>
@@ -18,6 +18,7 @@ const PrimaryTabs = ({tabs, selected, setSelected}) => {
                     })
                 }
             </ul>
+            { children }
         </div>
     )
 }

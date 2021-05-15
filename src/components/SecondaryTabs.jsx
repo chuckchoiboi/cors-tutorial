@@ -1,4 +1,4 @@
-const SecondaryTabs = ({isSelected, tabs, selected, setSelected}) => {
+const SecondaryTabs = ({isSelected, tabs, selected, setSelected, children}) => {
     if (isSelected) {
         return (
             <div className="secondary-tabs">
@@ -18,6 +18,7 @@ const SecondaryTabs = ({isSelected, tabs, selected, setSelected}) => {
                         })
                     }
                 </ul>
+                { children }
             </div>
         )
     } else {
