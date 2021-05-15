@@ -1,6 +1,6 @@
 # CORS Tutorial App
 
-- [App Link]()
+- [App Link](https://chuckchoiboi.github.io/cors-tutorial/)
 - [Server repository](https://github.com/chuckchoiboi/cors-tutorial-server)
 
 <br/>
@@ -24,7 +24,7 @@ This application was built as a complimentary resource to help people understand
 
 - As a user, I can see the application window with primary tabs and secondary tabs
 - As a user, I can click the primary tabs to switch among 3 types of requests which will show different items in the secondary tabs
-- As a user, I can click the secondary tabs to show different server/request settings for each requests
+- As a user, I can click the secondary tabs to show different server/request condition for each requests
 - As a user, I can click "Send Request" button to send request to the backend server to get the response in the display
   <br/>
   <br/>
