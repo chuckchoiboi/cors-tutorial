@@ -8,7 +8,7 @@
 
 ## Wireframe
 
-![wireframe](public/image/wireframe.jpg)
+![wireframe](https://user-images.githubusercontent.com/60675322/118344897-d2147a80-b4e5-11eb-8ed3-88333cd7a377.png)
 
 <br/>
 <br/>
@@ -19,6 +19,7 @@ This application was built as a complimentary resource to help people understand
 
 <br/>
 <br/>
+
 ## User Stories
 
 - As a user, I can see the application window with primary tabs and secondary tabs
