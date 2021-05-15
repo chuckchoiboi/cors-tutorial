@@ -1,7 +1,7 @@
 const PrimaryTabs = ({tabs, selected, setSelected, setSecondarySelected, children}) => {
 
     return (
-        <div>
+        <>
             <ul className="nav nav-tabs d-flex justify-content-around">
                 {
                     tabs.map( (tab, idx) => {
@@ -21,7 +21,7 @@ const PrimaryTabs = ({tabs, selected, setSelected, setSecondarySelected, childre
                 }
             </ul>
             { children }
-        </div>
+        </>
     )
 }
 
