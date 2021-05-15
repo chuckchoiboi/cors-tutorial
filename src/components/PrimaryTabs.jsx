@@ -1,6 +1,6 @@
 const PrimaryTabs = ({tabs}) => {
     return (
-        <div style={{ width: '40%'}}>
+        <div>
             <ul className="nav nav-tabs">
                 {
                     tabs.map( tab => {
