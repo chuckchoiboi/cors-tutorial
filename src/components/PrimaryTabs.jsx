@@ -2,7 +2,7 @@ const PrimaryTabs = ({tabs, selected, setSelected, setSecondarySelected, childre
 
     return (
         <div>
-            <ul className="nav nav-tabs">
+            <ul className="nav nav-tabs d-flex justify-content-around">
                 {
                     tabs.map( (tab, idx) => {
                         const active = idx === selected ? 'active' : '';
