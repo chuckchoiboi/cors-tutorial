@@ -4,13 +4,13 @@ const SecondaryTabs = ({isSelected, tabs, selected, setSelected, children}) => {
             <div className="secondary-tabs">
                 <ul className="nav nav-tabs">
                     {
-                        tabs.map( tab => {
+                        tabs.map( (tab, idx) => {
     
-                            const active = tab === selected ? 'active' : '';
+                            const active = idx === selected ? 'active' : '';
     
                             return (
                                 <li className="nav-item" key={ tab }>
-                                    <div className={ "nav-link " + active } style={{ cursor:"pointer" }} onClick={ () => setSelected(tab)}>
+                                    <div className={ "nav-link " + active } style={{ cursor:"pointer" }} onClick={ () => setSelected(idx)}>
                                         { tab }
                                     </div>
                                 </li>
