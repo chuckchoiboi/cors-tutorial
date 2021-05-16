@@ -51,7 +51,7 @@ function App() {
       }
     },
     {
-      url: baseURL + '/preflight/good-origin',
+      url: baseURL + '/preflight/good-request',
       header: {
         method: 'DELETE'
       }
