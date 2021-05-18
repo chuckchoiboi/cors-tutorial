@@ -88,3 +88,8 @@
   border-top: 4px solid #8dadff !important;
   background-color: #fff !important;
 }
+
+/* Tab */
+.Tab pre {
+  border-radius: 3px;
+}
