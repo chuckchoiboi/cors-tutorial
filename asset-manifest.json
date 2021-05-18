@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/cors-tutorial/static/css/main.bd52ea4b.chunk.css",
-    "main.js": "/cors-tutorial/static/js/main.954d33f2.chunk.js",
-    "main.js.map": "/cors-tutorial/static/js/main.954d33f2.chunk.js.map",
-    "runtime-main.js": "/cors-tutorial/static/js/runtime-main.d4f47761.js",
-    "runtime-main.js.map": "/cors-tutorial/static/js/runtime-main.d4f47761.js.map",
+    "main.css": "/cors-tutorial/static/css/main.268ba750.chunk.css",
+    "main.js": "/cors-tutorial/static/js/main.3bd1a8e9.chunk.js",
+    "main.js.map": "/cors-tutorial/static/js/main.3bd1a8e9.chunk.js.map",
+    "runtime-main.js": "/cors-tutorial/static/js/runtime-main.594c9d33.js",
+    "runtime-main.js.map": "/cors-tutorial/static/js/runtime-main.594c9d33.js.map",
     "static/css/2.61b4cb56.chunk.css": "/cors-tutorial/static/css/2.61b4cb56.chunk.css",
-    "static/js/2.3c450ba4.chunk.js": "/cors-tutorial/static/js/2.3c450ba4.chunk.js",
-    "static/js/2.3c450ba4.chunk.js.map": "/cors-tutorial/static/js/2.3c450ba4.chunk.js.map",
-    "static/js/3.f5991919.chunk.js": "/cors-tutorial/static/js/3.f5991919.chunk.js",
-    "static/js/3.f5991919.chunk.js.map": "/cors-tutorial/static/js/3.f5991919.chunk.js.map",
+    "static/js/2.fa7f568e.chunk.js": "/cors-tutorial/static/js/2.fa7f568e.chunk.js",
+    "static/js/2.fa7f568e.chunk.js.map": "/cors-tutorial/static/js/2.fa7f568e.chunk.js.map",
+    "static/js/3.b69c7bef.chunk.js": "/cors-tutorial/static/js/3.b69c7bef.chunk.js",
+    "static/js/3.b69c7bef.chunk.js.map": "/cors-tutorial/static/js/3.b69c7bef.chunk.js.map",
     "index.html": "/cors-tutorial/index.html",
     "static/css/2.61b4cb56.chunk.css.map": "/cors-tutorial/static/css/2.61b4cb56.chunk.css.map",
-    "static/css/main.bd52ea4b.chunk.css.map": "/cors-tutorial/static/css/main.bd52ea4b.chunk.css.map",
-    "static/js/2.3c450ba4.chunk.js.LICENSE.txt": "/cors-tutorial/static/js/2.3c450ba4.chunk.js.LICENSE.txt"
+    "static/css/main.268ba750.chunk.css.map": "/cors-tutorial/static/css/main.268ba750.chunk.css.map",
+    "static/js/2.fa7f568e.chunk.js.LICENSE.txt": "/cors-tutorial/static/js/2.fa7f568e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.d4f47761.js",
+    "static/js/runtime-main.594c9d33.js",
     "static/css/2.61b4cb56.chunk.css",
-    "static/js/2.3c450ba4.chunk.js",
-    "static/css/main.bd52ea4b.chunk.css",
-    "static/js/main.954d33f2.chunk.js"
+    "static/js/2.fa7f568e.chunk.js",
+    "static/css/main.268ba750.chunk.css",
+    "static/js/main.3bd1a8e9.chunk.js"
   ]
 }
