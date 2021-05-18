@@ -9,12 +9,18 @@
 /* PrimaryTabs */
 
 .PrimaryTabs {
+  width: 50%;
   background-color: #fff;
   border-radius: 5px;
 }
 
 .PrimaryTabs > .nav {
   background-color: #7e7e7e !important;
+}
+
+.PrimaryTabs > .nav .nav-item {
+  width: 33.3333%;
+  text-align: center;
 }
 
 .PrimaryTabs > .nav-tabs .nav-link {
