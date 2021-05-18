@@ -64,7 +64,7 @@
 .SecondaryTabs > .nav-tabs .nav-link {
   margin-bottom: unset !important;
   border: unset !important;
-  border-top: 2px solid #ededed !important;
+  border-top: 4px solid #ededed !important;
   border-top-left-radius: unset !important;
   border-top-right-radius: unset !important;
 }
@@ -72,17 +72,17 @@
 .SecondaryTabs > .nav .nav-item .nav-link {
   background-color: #ededed !important;
   color: #000;
-  font-size: 0.8rem;
+  font-size: 20px;
 }
 
 .SecondaryTabs > .nav-tabs .nav-link:focus,
 .SecondaryTabs > .nav-tabs .nav-link:hover {
-  border-top: 2px solid #bccfff !important;
+  border-top: 4px solid #bccfff !important;
   color: unset !important;
 }
 
 .SecondaryTabs > .nav-tabs .nav-item.show .nav-link,
 .SecondaryTabs > .nav-tabs .nav-link.active {
-  border-top: 2px solid #8dadff !important;
+  border-top: 4px solid #8dadff !important;
   background-color: #fff !important;
 }
