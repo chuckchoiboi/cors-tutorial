@@ -5,3 +5,35 @@
   margin: 0;
   padding: 0;
 }
+
+/* PrimaryTabs */
+
+.PrimaryTabs {
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.PrimaryTabs > .nav {
+  background-color: #7e7e7e !important;
+}
+
+.PrimaryTabs > .nav-tabs .nav-link {
+  margin-bottom: unset !important;
+  border: 1px solid #363636 !important;
+}
+
+.PrimaryTabs > .nav .nav-item .nav-link {
+  background-color: #363636 !important;
+  color: #fff;
+}
+
+.PrimaryTabs > .nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:hover {
+  color: #bccefd !important;
+}
+
+.PrimaryTabs > .nav-tabs .nav-item.show .nav-link,
+.PrimaryTabs > .nav-tabs .nav-link.active {
+  color: #8dadff !important;
+  border: 1px solid #363636;
+}
