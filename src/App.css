@@ -30,6 +30,7 @@
 .PrimaryTabs > .nav-tabs .nav-link {
   margin-bottom: unset !important;
   border: 1px solid #363636 !important;
+  font-weight: bold;
 }
 
 .PrimaryTabs > .nav .nav-item .nav-link {
@@ -73,6 +74,7 @@
   background-color: #ededed !important;
   color: #000;
   font-size: 20px;
+  font-weight: bold;
 }
 
 .SecondaryTabs > .nav-tabs .nav-link:focus,
