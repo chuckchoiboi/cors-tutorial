@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/cors-tutorial/static/css/main.ad645dba.chunk.css",
-    "main.js": "/cors-tutorial/static/js/main.ac4b53c3.chunk.js",
-    "main.js.map": "/cors-tutorial/static/js/main.ac4b53c3.chunk.js.map",
+    "main.css": "/cors-tutorial/static/css/main.b0345fc0.chunk.css",
+    "main.js": "/cors-tutorial/static/js/main.0e2a72d6.chunk.js",
+    "main.js.map": "/cors-tutorial/static/js/main.0e2a72d6.chunk.js.map",
     "runtime-main.js": "/cors-tutorial/static/js/runtime-main.d4f47761.js",
     "runtime-main.js.map": "/cors-tutorial/static/js/runtime-main.d4f47761.js.map",
     "static/css/2.61b4cb56.chunk.css": "/cors-tutorial/static/css/2.61b4cb56.chunk.css",
@@ -12,14 +12,14 @@
     "static/js/3.f5991919.chunk.js.map": "/cors-tutorial/static/js/3.f5991919.chunk.js.map",
     "index.html": "/cors-tutorial/index.html",
     "static/css/2.61b4cb56.chunk.css.map": "/cors-tutorial/static/css/2.61b4cb56.chunk.css.map",
-    "static/css/main.ad645dba.chunk.css.map": "/cors-tutorial/static/css/main.ad645dba.chunk.css.map",
+    "static/css/main.b0345fc0.chunk.css.map": "/cors-tutorial/static/css/main.b0345fc0.chunk.css.map",
     "static/js/2.3c450ba4.chunk.js.LICENSE.txt": "/cors-tutorial/static/js/2.3c450ba4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d4f47761.js",
     "static/css/2.61b4cb56.chunk.css",
     "static/js/2.3c450ba4.chunk.js",
-    "static/css/main.ad645dba.chunk.css",
-    "static/js/main.ac4b53c3.chunk.js"
+    "static/css/main.b0345fc0.chunk.css",
+    "static/js/main.0e2a72d6.chunk.js"
   ]
 }
