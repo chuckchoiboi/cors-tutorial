@@ -1,4 +1,4 @@
-const SecondaryTabs = ({isSelected, tabs, selected, setSelected, children}) => {
+const SecondaryTabs = ({isSelected, tabs, selected, setSelected, setFetched, children}) => {
     const tabsWidth = 100/tabs.length
 
     if (isSelected) {
@@ -12,7 +12,7 @@ const SecondaryTabs = ({isSelected, tabs, selected, setSelected, children}) => {
     
                             return (
                                 <li className="nav-item" key={ tab } style={{ width: `${tabsWidth}%` }}>
-                                    <div className={ "nav-link " + active } style={{ cursor:"pointer" }} onClick={ () => setSelected(idx)}>
+                                    <div className={ "nav-link " + active } style={{ cursor:"pointer" }} onClick={ () => {setSelected(idx); setFetched(false)}}>
                                         { tab }
                                     </div>
                                 </li>

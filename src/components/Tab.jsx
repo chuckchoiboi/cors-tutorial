@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
-const Tab = ({data}) => {
+const Tab = ({data, fetched, setFetched}) => {
 
     const server = data.server
 
@@ -10,13 +10,15 @@ const Tab = ({data}) => {
 
     const console = data.console;
 
-    const [response, setResponse] = useState()
+    const [response, setResponse] = useState('')
 
     const sendReq = (data) => {
         if (data.header) {
+            setFetched(true)
             fetch(data.url, data.header).then(res => res.json()).then(json => JSON.stringify(json)).then(data => setResponse(`${data}`) )
         } else {
-            fetch(data.url).then(res => res.json()).then(json => JSON.stringify(json)).then(data => setResponse(`${data}`))
+            setFetched(true)
+            fetch(data.url).then(res => res.json()).then(json => JSON.stringify(json)).then(data => {setResponse(`${data}`)})
         }
     }
 
@@ -31,14 +33,32 @@ const Tab = ({data}) => {
                     {`${request}`}
                 </SyntaxHighlighter>
             <button className="btn btn-primary mx-auto d-block" onClick={() => {sendReq(data)}}>Send Request</button>
-            <p>Console</p>
-                <SyntaxHighlighter language="javascript" style={a11yDark} lineProps={{style: {wordBreak: 'break-all', whiteSpace: 'pre-wrap'}}} wrapLines={true}>
-                    {`${console}`}
-                </SyntaxHighlighter>
-            <p>Response</p>
-                <SyntaxHighlighter language="javascript" style={a11yDark} lineProps={{style: {wordBreak: 'break-all', whiteSpace: 'pre-wrap'}}} wrapLines={true}>
-                    {`${response}`}
-                </SyntaxHighlighter>
+            {
+                fetched ?
+                <>
+                {
+                    console ?
+                    <><p>Console</p>
+                    <SyntaxHighlighter language="javascript" style={a11yDark} lineProps={{style: {wordBreak: 'break-all', whiteSpace: 'pre-wrap'}}} wrapLines={true}>
+                        {`${console}`}
+                    </SyntaxHighlighter></>
+                    :
+                    ''
+                }
+                {
+                    response ?
+                    <><p>Response</p>
+                    <SyntaxHighlighter language="javascript" style={a11yDark} lineProps={{style: {wordBreak: 'break-all', whiteSpace: 'pre-wrap'}}} wrapLines={true}>
+                        {`${response}`}
+                    </SyntaxHighlighter></>
+                    :
+                    ''
+                }
+                </>
+                :
+                ''
+            }
+            
         </div>
     )
 }

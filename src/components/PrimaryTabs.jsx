@@ -1,4 +1,4 @@
-const PrimaryTabs = ({tabs, selected, setSelected, setSecondarySelected, children}) => {
+const PrimaryTabs = ({tabs, selected, setSelected, setSecondarySelected, setFetched, children}) => {
 
     return (
         <div className="PrimaryTabs">
@@ -12,6 +12,7 @@ const PrimaryTabs = ({tabs, selected, setSelected, setSecondarySelected, childre
                                 <div className={ "nav-link " + active } style={{ cursor:"pointer" }} onClick={ () => { 
                                     setSelected(idx)
                                     setSecondarySelected(0)
+                                    setFetched(false)
                                     }}>
                                     { tab }
                                 </div>
