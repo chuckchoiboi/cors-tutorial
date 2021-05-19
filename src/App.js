@@ -18,16 +18,35 @@ function App() {
 
   const simpleData = [
     {
-      url: baseURL + '/simple/no-origin'
+      url: baseURL + '/simple/no-origin',
+      server: 
+`app.get('/api/simple/no-origin', (req, res) => {
+  res.status(200).json({ title: 'Hello World!' })
+})`
     },
     {
-      url: baseURL + '/simple/wildcard-origin'
+      url: baseURL + '/simple/wildcard-origin',
+      server: 
+`app.get('/api/simple/wildcard-origin', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*")
+  res.status(200).json({ title: 'Hello World!' })
+})`
     },
     {
-      url: baseURL + '/simple/bad-origin'
+      url: baseURL + '/simple/bad-origin',
+      server: 
+`app.get('/api/simple/bad-origin', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "https://www.website.notcool")
+  res.status(200).json({ title: 'Hello World!' })
+})`
     },
     {
-      url: baseURL + '/simple/good-origin'
+      url: baseURL + '/simple/good-origin',
+      server: 
+`app.get('/api/simple/good-origin', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "https://chuckchoiboi.github.io")
+  res.status(200).json({ title: 'Hello World!' })
+})`
     }
   ]
 
@@ -36,25 +55,57 @@ function App() {
       url: baseURL + '/preflight/bad-origin',
       header: {
         method: 'DELETE'
-      }
+      },
+      server: 
+`app.options('/api/preflight/bad-origin', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "https://www.website.notcool")
+  res.status(204).end()
+})`
     },
     {
       url: baseURL + '/preflight/bad-method',
       header: {
         method: 'DELETE'
-      }
+      },
+      server: 
+`app.options('/api/preflight/bad-method', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "https://chuckchoiboi.github.io")
+  res.status(204).end()
+})`
     },
     {
       url: baseURL + '/preflight/req-bad-origin',
       header: {
         method: 'DELETE'
-      }
+      },
+      server: 
+`app.options('/api/preflight/req-bad-origin', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "https://chuckchoiboi.github.io")
+  res.header("Access-Control-Allow-Methods", "DELETE")
+  res.status(204).end()
+})
+
+app.delete('/api/simple/req-bad-origin', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "https://www.website.notcool")
+  res.status(200).json({ title: 'Goodbye World!' })
+})`
     },
     {
       url: baseURL + '/preflight/good-request',
       header: {
         method: 'DELETE'
-      }
+      },
+      server: 
+`app.options('/api/preflight/good-request', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "https://chuckchoiboi.github.io")
+  res.header("Access-Control-Allow-Methods", "DELETE")
+  res.status(204).end()
+})
+
+app.delete('/api/simple/good-request', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "https://chuckchoiboi.github.io")
+  res.status(200).json({ title: 'Goodbye World!' })
+})`
     }
   ]
 
@@ -63,19 +114,35 @@ function App() {
       url: baseURL + '/credentialed/wildcard-origin',
       header: {
         credentials: 'include'
-      }
+      },
+      server: 
+`app.get('/api/credentialed/wildcard-origin', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*")
+  res.status(200).json({ title: 'Hello World!' })
+})`
     },
     {
       url: baseURL + '/credentialed/good-origin',
       header: {
         credentials: 'include'
-      }
+      },
+      server: 
+`app.get('/api/credentialed/good-origin', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "https://chuckchoiboi.github.io")
+  res.status(200).json({ title: 'Hello World!' })
+})`
     },
     {
       url: baseURL + '/credentialed/good-request',
       header: {
         credentials: 'include'
-      }
+      },
+      server: 
+`app.get('/api/credentialed/good-request', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "https://chuckchoiboi.github.io")
+  res.header("Access-Control-Allow-Credentials", "true")
+  res.status(200).json({ title: 'Hello World!' })
+})`
     }
   ]
 

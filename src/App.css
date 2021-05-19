@@ -31,6 +31,7 @@
   margin-bottom: unset !important;
   border: 1px solid #363636 !important;
   font-weight: bold;
+  height: 100%;
 }
 
 .PrimaryTabs > .nav .nav-item .nav-link {
@@ -68,6 +69,7 @@
   border-top: 4px solid #ededed !important;
   border-top-left-radius: unset !important;
   border-top-right-radius: unset !important;
+  height: 100%;
 }
 
 .SecondaryTabs > .nav .nav-item .nav-link {
@@ -92,4 +94,9 @@
 /* Tab */
 .Tab pre {
   border-radius: 3px;
+}
+
+/* General Styling */
+.btn {
+  font-size: 12px !important;
 }
