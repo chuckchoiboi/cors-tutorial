@@ -4,6 +4,12 @@ import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const Tab = ({data, fetched, setFetched}) => {
 
+    useEffect(() => {
+        if (!fetched) {
+            setResponse('')
+        }
+    }, [fetched])
+
     const server = data.server
 
     const request = data.header ? `fetch('${data.url}', '${JSON.stringify(data.header)}')` : `fetch('${data.url}')`;
@@ -13,11 +19,10 @@ const Tab = ({data, fetched, setFetched}) => {
     const [response, setResponse] = useState('')
 
     const sendReq = (data) => {
+        setFetched(true)
         if (data.header) {
-            setFetched(true)
             fetch(data.url, data.header).then(res => res.json()).then(json => JSON.stringify(json)).then(data => setResponse(`${data}`) )
         } else {
-            setFetched(true)
             fetch(data.url).then(res => res.json()).then(json => JSON.stringify(json)).then(data => {setResponse(`${data}`)})
         }
     }
