@@ -8,9 +8,9 @@ const Tab = ({data}) => {
 
     const request = data.header ? `fetch('${data.url}', '${JSON.stringify(data.header)}')` : `fetch('${data.url}')`;
 
-    const console = "Access to fetch at 'https://cors-tutorial-server.herokuapp.com/api/simple/no-origin' from origin 'https://www.chuckchoi.me' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.";
+    const console = data.console;
 
-    const [response, setResponse] = useState('')
+    const [response, setResponse] = useState()
 
     const sendReq = (data) => {
         if (data.header) {

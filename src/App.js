@@ -19,10 +19,12 @@ function App() {
   const simpleData = [
     {
       url: baseURL + '/simple/no-origin',
+      console: 
+`Access to fetch at 'https://cors-tutorial-server.herokuapp.com/api/simple/no-origin' from origin 'https://www.chuckchoi.me' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request mode to 'no-cors' to fetch the resource with CORS disabled.`,
       server: 
 `app.get('/api/simple/no-origin', (req, res) => {
   res.status(200).json({ title: 'Hello World!' })
-})`
+})`,
     },
     {
       url: baseURL + '/simple/wildcard-origin',
@@ -34,6 +36,8 @@ function App() {
     },
     {
       url: baseURL + '/simple/bad-origin',
+      console: 
+`Access to fetch at 'https://cors-tutorial-server.herokuapp.com/api/simple/bad-origin' from origin 'https://chuckchoiboi.github.io' has been blocked by CORS policy: The 'Access-Control-Allow-Origin' header has a value 'https://www.website.notcool' that is not equal to the supplied origin. Have the server send the header with a valid value, or, if an opaque response serves your needs, set the request mode to 'no-cors' to fetch the resource with CORS disabled.`,
       server: 
 `app.get('/api/simple/bad-origin', (req, res) => {
   res.header("Access-Control-Allow-Origin", "https://www.website.notcool")
@@ -53,6 +57,7 @@ function App() {
   const preflightData = [
     {
       url: baseURL + '/preflight/bad-origin',
+      console: "Access to fetch at 'https://cors-tutorial-server.herokuapp.com/api/preflight/bad-origin' from origin 'https://chuckchoiboi.github.io' has been blocked by CORS policy: Response to preflight request does not pass access control check: The 'Access-Control-Allow-Origin' header has a value 'https://www.website.notcool' that is not equal to the supplied origin. Have the server send the header with a valid value, or, if an opaque response serves your needs, set the request mode to 'no-cors' to fetch the resource with CORS disabled.",
       header: {
         method: 'DELETE'
       },
@@ -67,6 +72,7 @@ function App() {
       header: {
         method: 'DELETE'
       },
+      console: "Access to fetch at 'https://cors-tutorial-server.herokuapp.com/api/preflight/bad-method' from origin 'https://chuckchoiboi.github.io' has been blocked by CORS policy: Method DELETE is not allowed by Access-Control-Allow-Methods in preflight response.",
       server: 
 `app.options('/api/preflight/bad-method', (req, res) => {
   res.header("Access-Control-Allow-Origin", "https://chuckchoiboi.github.io")
@@ -78,6 +84,7 @@ function App() {
       header: {
         method: 'DELETE'
       },
+      console: "Access to fetch at 'https://cors-tutorial-server.herokuapp.com/api/preflight/req-bad-origin' from origin 'https://chuckchoiboi.github.io' has been blocked by CORS policy: The 'Access-Control-Allow-Origin' header has a value 'https://www.website.notcool' that is not equal to the supplied origin. Have the server send the header with a valid value, or, if an opaque response serves your needs, set the request mode to 'no-cors' to fetch the resource with CORS disabled.",
       server: 
 `app.options('/api/preflight/req-bad-origin', (req, res) => {
   res.header("Access-Control-Allow-Origin", "https://chuckchoiboi.github.io")
@@ -115,6 +122,7 @@ app.delete('/api/simple/good-request', (req, res) => {
       header: {
         credentials: 'include'
       },
+      console: "Access to fetch at 'https://cors-tutorial-server.herokuapp.com/api/credentialed/wildcard-origin' from origin 'https://chuckchoiboi.github.io' has been blocked by CORS policy: The value of the 'Access-Control-Allow-Origin' header in the response must not be the wildcard '*' when the request credentials mode is 'include'.",
       server: 
 `app.get('/api/credentialed/wildcard-origin', (req, res) => {
   res.header("Access-Control-Allow-Origin", "*")
@@ -126,6 +134,7 @@ app.delete('/api/simple/good-request', (req, res) => {
       header: {
         credentials: 'include'
       },
+      console: "Access to fetch at 'https://cors-tutorial-server.herokuapp.com/api/credentialed/good-origin' from origin 'https://chuckchoiboi.github.io' has been blocked by CORS policy: The value of the 'Access-Control-Allow-Credentials' header in the response is '' which must be 'true' when the request credentials mode is 'include'.",
       server: 
 `app.get('/api/credentialed/good-origin', (req, res) => {
   res.header("Access-Control-Allow-Origin", "https://chuckchoiboi.github.io")
