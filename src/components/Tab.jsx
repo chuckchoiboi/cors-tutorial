@@ -42,22 +42,18 @@ const Tab = ({data, fetched, setFetched}) => {
                 fetched ?
                 <>
                 {
-                    console ?
+                    console &&
                     <><p>Console</p>
                     <SyntaxHighlighter language="javascript" style={a11yDark} lineProps={{style: {wordBreak: 'break-all', whiteSpace: 'pre-wrap'}}} wrapLines={true}>
                         {`${console}`}
                     </SyntaxHighlighter></>
-                    :
-                    ''
                 }
                 {
-                    response ?
+                    response &&
                     <><p>Response</p>
                     <SyntaxHighlighter language="javascript" style={a11yDark} lineProps={{style: {wordBreak: 'break-all', whiteSpace: 'pre-wrap'}}} wrapLines={true}>
                         {`${response}`}
                     </SyntaxHighlighter></>
-                    :
-                    ''
                 }
                 </>
                 :
