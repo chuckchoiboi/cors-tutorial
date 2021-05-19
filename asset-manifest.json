@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/cors-tutorial/static/css/main.b4e8b77c.chunk.css",
-    "main.js": "/cors-tutorial/static/js/main.55ce217c.chunk.js",
-    "main.js.map": "/cors-tutorial/static/js/main.55ce217c.chunk.js.map",
+    "main.js": "/cors-tutorial/static/js/main.30b704a9.chunk.js",
+    "main.js.map": "/cors-tutorial/static/js/main.30b704a9.chunk.js.map",
     "runtime-main.js": "/cors-tutorial/static/js/runtime-main.594c9d33.js",
     "runtime-main.js.map": "/cors-tutorial/static/js/runtime-main.594c9d33.js.map",
     "static/css/2.61b4cb56.chunk.css": "/cors-tutorial/static/css/2.61b4cb56.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.61b4cb56.chunk.css",
     "static/js/2.fc061b44.chunk.js",
     "static/css/main.b4e8b77c.chunk.css",
-    "static/js/main.55ce217c.chunk.js"
+    "static/js/main.30b704a9.chunk.js"
   ]
 }
