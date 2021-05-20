@@ -7,6 +7,7 @@ const Tab = ({data, fetched, setFetched}) => {
     useEffect(() => {
         if (!fetched) {
             setResponse('')
+            setClicked(false)
         }
     }, [fetched])
 
@@ -18,12 +19,14 @@ const Tab = ({data, fetched, setFetched}) => {
 
     const [response, setResponse] = useState('')
 
+    const [clicked, setClicked] = useState(false)
+
     const sendReq = (data) => {
-        setFetched(true)
+        setClicked(true)
         if (data.header) {
-            fetch(data.url, data.header).then(res => res.json()).then(json => JSON.stringify(json)).then(data => setResponse(`${data}`) )
+            fetch(data.url, data.header).then(res => res.json()).then(json => JSON.stringify(json)).then(data => {setResponse(`${data}`); setFetched(true)} ).catch( error => setFetched(true))
         } else {
-            fetch(data.url).then(res => res.json()).then(json => JSON.stringify(json)).then(data => {setResponse(`${data}`)})
+            fetch(data.url).then(res => res.json()).then(json => JSON.stringify(json)).then(data => {setResponse(`${data}`); setFetched(true)}).catch( error => setFetched(true))
         }
     }
 
@@ -39,28 +42,32 @@ const Tab = ({data, fetched, setFetched}) => {
                 </SyntaxHighlighter>
             <button className="btn btn-primary mx-auto d-block" onClick={() => {sendReq(data)}}>Send Request</button>
             {
-                fetched ?
+                clicked && !fetched ?
+                <h1>Loading Data...</h1>
+                :
                 <>
                 {
-                    error &&
-                    <><p>Error</p>
-                    <SyntaxHighlighter language="javascript" style={a11yDark} lineProps={{style: {wordBreak: 'break-all', whiteSpace: 'pre-wrap'}}} wrapLines={true}>
-                        {`${error}`}
-                    </SyntaxHighlighter></>
-                }
-                {
-                    response ?
-                    <><p>Response</p>
-                    <SyntaxHighlighter language="javascript" style={a11yDark} lineProps={{style: {wordBreak: 'break-all', whiteSpace: 'pre-wrap'}}} wrapLines={true}>
-                        {`${response}`}
-                    </SyntaxHighlighter></>
-                    :
-                    <h1>Fetching Data...</h1>
+                    fetched &&
+                    <>
+                    {
+                        error &&
+                        <><p>Error</p>
+                        <SyntaxHighlighter language="javascript" style={a11yDark} lineProps={{style: {wordBreak: 'break-all', whiteSpace: 'pre-wrap'}}} wrapLines={true}>
+                            {`${error}`}
+                        </SyntaxHighlighter></>
+                    }
+                    {
+                        response &&
+                        <><p>Response</p>
+                        <SyntaxHighlighter language="javascript" style={a11yDark} lineProps={{style: {wordBreak: 'break-all', whiteSpace: 'pre-wrap'}}} wrapLines={true}>
+                            {`${response}`}
+                        </SyntaxHighlighter></>
+                    }
+                    </>
                 }
                 </>
-                :
-                ''
             }
+            
             
         </div>
     )
