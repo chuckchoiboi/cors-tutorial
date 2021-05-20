@@ -14,7 +14,7 @@ const Tab = ({data, fetched, setFetched}) => {
 
     const request = data.header ? `fetch('${data.url}', '${JSON.stringify(data.header)}')` : `fetch('${data.url}')`;
 
-    const console = data.console;
+    const error = data.error;
 
     const [response, setResponse] = useState('')
 
@@ -42,18 +42,20 @@ const Tab = ({data, fetched, setFetched}) => {
                 fetched ?
                 <>
                 {
-                    console &&
-                    <><p>Console</p>
+                    error &&
+                    <><p>Error</p>
                     <SyntaxHighlighter language="javascript" style={a11yDark} lineProps={{style: {wordBreak: 'break-all', whiteSpace: 'pre-wrap'}}} wrapLines={true}>
-                        {`${console}`}
+                        {`${error}`}
                     </SyntaxHighlighter></>
                 }
                 {
-                    response &&
+                    response ?
                     <><p>Response</p>
                     <SyntaxHighlighter language="javascript" style={a11yDark} lineProps={{style: {wordBreak: 'break-all', whiteSpace: 'pre-wrap'}}} wrapLines={true}>
                         {`${response}`}
                     </SyntaxHighlighter></>
+                    :
+                    <h1>Fetching Data...</h1>
                 }
                 </>
                 :
