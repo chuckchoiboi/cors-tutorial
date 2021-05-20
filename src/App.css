@@ -100,3 +100,10 @@
 .btn {
   font-size: 14px !important;
 }
+
+/* Media Queries */
+@media only screen and (max-width: 900px) {
+  .PrimaryTabs {
+    width: 100%;
+  }
+}
