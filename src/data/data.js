@@ -16,7 +16,15 @@ const simpleData = [
 `app.get('/api/simple/wildcard-origin', (req, res) => {
   res.header("Access-Control-Allow-Origin", "*")
   res.status(200).json({ title: 'Hello World!' })
-})`
+})`,
+      response:
+`GET https://cors-tutorial-server.herokuapp.com/api/simple/wildcard-origin 200 OK
+
+Access-Control-Allow-Origin: *
+Content-Length: 24
+Content-Type: application/json; charset=utf-8
+Server: Cowboy
+Status: 200`
     },
     {
       url: baseURL + '/simple/bad-origin',
@@ -34,7 +42,15 @@ const simpleData = [
 `app.get('/api/simple/good-origin', (req, res) => {
   res.header("Access-Control-Allow-Origin", "https://chuckchoiboi.github.io")
   res.status(200).json({ title: 'Hello World!' })
-})`
+})`,
+      response:
+`GET https://cors-tutorial-server.herokuapp.com/api/simple/good-origin 200 OK
+
+Access-Control-Allow-Origin: https://chuckchoiboi.github.io
+Content-Length: 24
+Content-Type: application/json; charset=utf-8
+Server: Cowboy
+Status: 200`
     }
   ]
 
@@ -96,7 +112,27 @@ app.delete('/api/simple/req-bad-origin', (req, res) => {
 app.delete('/api/simple/good-request', (req, res) => {
   res.header("Access-Control-Allow-Origin", "https://chuckchoiboi.github.io")
   res.status(200).json({ title: 'Goodbye World!' })
-})`
+})`,
+      response:
+`OPTIONS https://cors-tutorial-server.herokuapp.com/api/preflight/good-request 204 No Content
+
+Access-Control-Allow-Origin: https://chuckchoiboi.github.io
+Access-Control-Allow-Methods: DELETE
+Connection: keep-alive
+Content-Length: 0
+Server: Cowboy
+Status: 204
+
+-------------------------------------------------
+
+DELETE https://cors-tutorial-server.herokuapp.com/api/preflight/good-request 200 OK
+
+Access-Control-Allow-Origin: https://chuckchoiboi.github.io
+Connection: keep-alive
+Content-Length: 26
+Content-Type: application/json; charset=utf-8
+Server: Cowboy
+Status: 200`
     }
   ]
 
@@ -135,7 +171,16 @@ app.delete('/api/simple/good-request', (req, res) => {
   res.header("Access-Control-Allow-Origin", "https://chuckchoiboi.github.io")
   res.header("Access-Control-Allow-Credentials", "true")
   res.status(200).json({ title: 'Hello World!' })
-})`
+})`,
+      response:
+`GET https://cors-tutorial-server.herokuapp.com/api/credentialed/good-request 200 OK
+
+Access-Control-Allow-Credentialed: true
+Access-Control-Allow-Origin: https://chuckchoiboi.github.io
+Content-Length: 24
+Content-Type: application/json; charset=utf-8
+Server: Cowboy
+Status: 200`
     }
 ]
 

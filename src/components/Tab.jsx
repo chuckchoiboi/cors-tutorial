@@ -24,9 +24,13 @@ const Tab = ({data, fetched, setFetched}) => {
     const sendReq = (data) => {
         setClicked(true)
         if (data.header) {
-            fetch(data.url, data.header).then(res => res.json()).then(json => JSON.stringify(json)).then(data => {setResponse(`${data}`); setFetched(true)} ).catch( error => setFetched(true))
+            fetch(data.url, data.header).then(res => res.json()).then(json => JSON.stringify(json)).then(parsedData => {setResponse(`${data.response}
+
+${parsedData}`); setFetched(true)} ).catch( error => setFetched(true))
         } else {
-            fetch(data.url).then(res => res.json()).then(json => JSON.stringify(json)).then(data => {setResponse(`${data}`); setFetched(true)}).catch( error => setFetched(true))
+            fetch(data.url).then(res => res.json()).then(json => JSON.stringify(json)).then(parsedData => {setResponse(`${data.response}
+            
+Body: ${parsedData}`); setFetched(true)}).catch( error => setFetched(true))
         }
     }
 
