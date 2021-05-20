@@ -123,7 +123,7 @@ Content-Length: 0
 Server: Cowboy
 Status: 204
 
--------------------------------------------------
+----------------------------------------------------------------------------------------------
 
 DELETE https://cors-tutorial-server.herokuapp.com/api/preflight/good-request 200 OK
 
