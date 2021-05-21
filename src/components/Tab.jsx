@@ -8,6 +8,8 @@ const Tab = ({data, fetched, setFetched}) => {
         if (!fetched) {
             setResponse('')
             setClicked(false)
+        } else {
+            smoothScroll('#response')
         }
     }, [fetched])
 
@@ -20,6 +22,15 @@ const Tab = ({data, fetched, setFetched}) => {
     const [response, setResponse] = useState('')
 
     const [clicked, setClicked] = useState(false)
+
+    const smoothScroll = (target) => {
+        const offsetTop = document.querySelector(target).offsetTop;
+
+        window.scroll({
+            top: offsetTop,
+            behavior: "smooth"
+        });
+    }
 
     const sendReq = (data) => {
         setClicked(true)
@@ -44,7 +55,13 @@ Body: ${parsedData}`); setFetched(true)}).catch( error => setFetched(true))
                 <SyntaxHighlighter language="javascript" style={a11yDark} lineProps={{style: {wordBreak: 'break-all', whiteSpace: 'pre-wrap'}}} wrapLines={true}>
                     {`${request}`}
                 </SyntaxHighlighter>
-            <button className="btn btn-primary mx-auto d-block" onClick={() => {sendReq(data)}}>Send Request</button>
+            {
+                !fetched ?
+                <button className="btn btn-primary mx-auto d-block" onClick={() => {sendReq(data)}} disabled={clicked && !fetched ? true : false}>Send Request</button>
+                :
+                ''
+            }
+            
             {
                 clicked && !fetched ?
                 <h1>Loading Data...</h1>
@@ -55,14 +72,14 @@ Body: ${parsedData}`); setFetched(true)}).catch( error => setFetched(true))
                     <>
                     {
                         error &&
-                        <><p>Error</p>
+                        <><p id="response">Error</p>
                         <SyntaxHighlighter language="javascript" style={a11yDark} lineProps={{style: {wordBreak: 'break-all', whiteSpace: 'pre-wrap'}}} wrapLines={true}>
                             {`${error}`}
                         </SyntaxHighlighter></>
                     }
                     {
                         response &&
-                        <><p>Response</p>
+                        <><p id="response">Response</p>
                         <SyntaxHighlighter language="javascript" style={a11yDark} lineProps={{style: {wordBreak: 'break-all', whiteSpace: 'pre-wrap'}}} wrapLines={true}>
                             {`${response}`}
                         </SyntaxHighlighter></>
