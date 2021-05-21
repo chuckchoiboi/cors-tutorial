@@ -4,7 +4,7 @@ const simpleData = [
     {
       url: baseURL + '/simple/no-origin',
       error: 
-`Access to fetch at 'https://cors-tutorial-server.herokuapp.com/api/simple/no-origin' from origin 'https://www.chuckchoi.me' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request mode to 'no-cors' to fetch the resource with CORS disabled.`,
+`Access to fetch at 'https://cors-tutorial-server.herokuapp.com/api/simple/no-origin' from origin 'https://chuckchoiboi.github.io' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request mode to 'no-cors' to fetch the resource with CORS disabled.`,
       server: 
 `app.get('/api/simple/no-origin', (req, res) => {
   res.status(200).json({ title: 'Hello World!' })
