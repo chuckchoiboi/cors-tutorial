@@ -1,5 +1,6 @@
 # CORS Tutorial App
 
+- [Blog Post -- COMING UP](https://dev.to/chuckchoiboi)
 - [App Link](https://chuckchoiboi.github.io/cors-tutorial/)
 - [Server repository](https://github.com/chuckchoiboi/cors-tutorial-server)
 
