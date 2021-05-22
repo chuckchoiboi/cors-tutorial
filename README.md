@@ -1,6 +1,6 @@
 # CORS Tutorial App
 
-- [Blog Post -- COMING UP](https://dev.to/chuckchoiboi)
+- [Blog Post](https://dev.to/chuckchoiboi/demystifying-cross-origin-resource-sharing-cors-4lpj)
 - [App Link](https://chuckchoiboi.github.io/cors-tutorial/)
 - [Server repository](https://github.com/chuckchoiboi/cors-tutorial-server)
 
@@ -16,7 +16,7 @@
 
 ## Summary
 
-This application was built as a complimentary resource to help people understand Cross-Origin Resource Sharing (CORS) better with interactive interface. I recommend you to read [this blog](https://www.dev.to/chuckchoiboi) to get the full picture of the application.
+This application was built as a complimentary resource to help people understand Cross-Origin Resource Sharing (CORS) better with interactive interface. I recommend you to read [this blog](https://dev.to/chuckchoiboi/demystifying-cross-origin-resource-sharing-cors-4lpj) to get the full picture of the application.
 
 <br/>
 <br/>
