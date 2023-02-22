@@ -1,40 +1,82 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import './App.css';
-import PrimaryTabs from './components/PrimaryTabs'
-import SecondaryTabs from './components/SecondaryTabs'
-import Tab from './components/Tab'
-import { simpleData, preflightData, credentialedData } from './data/data'
+import PrimaryTabs from './components/PrimaryTabs';
+import SecondaryTabs from './components/SecondaryTabs';
+import Tab from './components/Tab';
+import { simpleData, preflightData, credentialedData } from './data/data';
 
 function App() {
+	const [primarySelected, setPrimarySelected] = useState(0);
+	const [secondarySelected, setSecondarySelected] = useState(0);
+	const primaryTabs = [
+		'Simple Request',
+		'Preflight Request',
+		'Credentialed Request',
+	];
+	const secondaryTabs = {
+		simple: ['Error 1', 'Wildcard Origin', 'Error 2', 'Valid Condition'],
+		preflight: ['Error 1', 'Error 2', 'Error 3', 'Valid Condition'],
+		credentialed: ['Error 1', 'Error 2', 'Valid Condition'],
+	};
 
-  const [primarySelected, setPrimarySelected] = useState(0)
-  const [secondarySelected, setSecondarySelected] = useState(0)
-  const primaryTabs = ['Simple Request', 'Preflight Request', 'Credentialed Request']
-  const secondaryTabs = {
-    simple: ['Error 1', 'Wildcard Origin', 'Error 2', 'Valid Condition'],
-    preflight: ['Error 1', 'Error 2', 'Error 3', 'Valid Condition'],
-    credentialed: ['Error 1', 'Error 2', 'Valid Condition']
-  }
+	const [fetched, setFetched] = useState(false);
 
-  const [fetched, setFetched] = useState(false)
+	return (
+		<div className="d-flex justify-content-center flex-row mt-4">
+			<PrimaryTabs
+				tabs={primaryTabs}
+				selected={primarySelected}
+				setSelected={setPrimarySelected}
+				setSecondarySelected={setSecondarySelected}
+				setFetched={setFetched}
+			>
+				<SecondaryTabs
+					isSelected={primarySelected === 0}
+					tabs={secondaryTabs.simple}
+					selected={secondarySelected}
+					setSelected={setSecondarySelected}
+					setFetched={setFetched}
+				>
+					<Tab
+						isSelected={secondarySelected === 0}
+						data={simpleData[secondarySelected]}
+						fetched={fetched}
+						setFetched={setFetched}
+					/>
+				</SecondaryTabs>
 
-  return (
-    <div className="d-flex justify-content-center flex-row mt-4">
-      <PrimaryTabs tabs={primaryTabs} selected={primarySelected} setSelected={setPrimarySelected} setSecondarySelected={setSecondarySelected} setFetched={setFetched}>
-        <SecondaryTabs isSelected={ primarySelected === 0} tabs={secondaryTabs.simple} selected={secondarySelected} setSelected={setSecondarySelected} setFetched={setFetched} >
-          <Tab isSelected={ secondarySelected === 0 } data={simpleData[secondarySelected]} fetched={fetched} setFetched={setFetched}/>
-        </SecondaryTabs>
+				<SecondaryTabs
+					isSelected={primarySelected === 1}
+					tabs={secondaryTabs.preflight}
+					selected={secondarySelected}
+					setSelected={setSecondarySelected}
+					setFetched={setFetched}
+				>
+					<Tab
+						isSelected={secondarySelected === 1}
+						data={preflightData[secondarySelected]}
+						fetched={fetched}
+						setFetched={setFetched}
+					/>
+				</SecondaryTabs>
 
-        <SecondaryTabs isSelected={ primarySelected === 1} tabs={secondaryTabs.preflight} selected={secondarySelected} setSelected={setSecondarySelected} setFetched={setFetched}>
-          <Tab isSelected={ secondarySelected === 1 } data={preflightData[secondarySelected]} fetched={fetched} setFetched={setFetched}/>
-        </SecondaryTabs>
-
-        <SecondaryTabs isSelected={ primarySelected === 2} tabs={secondaryTabs.credentialed} selected={secondarySelected} setSelected={setSecondarySelected} setFetched={setFetched}>
-          <Tab isSelected={ secondarySelected === 2 } data={credentialedData[secondarySelected]} fetched={fetched} setFetched={setFetched}/>
-        </SecondaryTabs>
-      </PrimaryTabs>
-    </div>
-  );
+				<SecondaryTabs
+					isSelected={primarySelected === 2}
+					tabs={secondaryTabs.credentialed}
+					selected={secondarySelected}
+					setSelected={setSecondarySelected}
+					setFetched={setFetched}
+				>
+					<Tab
+						isSelected={secondarySelected === 2}
+						data={credentialedData[secondarySelected]}
+						fetched={fetched}
+						setFetched={setFetched}
+					/>
+				</SecondaryTabs>
+			</PrimaryTabs>
+		</div>
+	);
 }
 
 export default App;
